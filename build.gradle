@@ -17,7 +17,7 @@ changelog {
 }
 
 ext {
-    GIT_REPO = 'LexManos/CobbleForDays'
+    GIT_REPO = 'LexManos/AndesiteForDays'
 }
 
 dependencies {
@@ -42,7 +42,7 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             mods {
-                cobblefordays {
+                andesitefordays {
                     source sourceSets.main
                 }
             }
@@ -54,7 +54,7 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             mods {
-                cobblefordays {
+                andesitefordays {
                     source sourceSets.main
                 }
             }
@@ -64,9 +64,9 @@ minecraft {
             workingDirectory project.file('run')
             //property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
             property 'forge.logging.console.level', 'debug'
-            args '--mod', 'cobblefordays', '--all', '--output', file('src/generated/resources/'), '--existing', sourceSets.main.resources.srcDirs[0]
+            args '--mod', 'andesitefordays', '--all', '--output', file('src/generated/resources/'), '--existing', sourceSets.main.resources.srcDirs[0]
             mods {
-                cobblefordays {
+                andesitefordays {
                     source sourceSets.main
                 }
             }

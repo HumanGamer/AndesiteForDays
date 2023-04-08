@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": {
+      "item": "minecraft:polished_andesite"
+    },
+    "L": {
+      "item": "minecraft:lava_bucket"
+    },
+    "R": {
+      "tag": "forge:ingots/gold"
+    },
+    "W": {
+      "item": "minecraft:water_bucket"
+    }
+  },
+  "pattern": [
+    "RRR",
+    "WGL",
+    "RRR"
+  ],
+  "result": {
+    "item": "andesitefordays:tier_4"
+  }
+}

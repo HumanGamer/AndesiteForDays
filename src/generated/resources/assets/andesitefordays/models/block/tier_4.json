@@ -1,0 +1,6 @@
+{
+  "parent": "andesitefordays:block/generator",
+  "textures": {
+    "material": "minecraft:block/gold_block"
+  }
+}

@@ -3,8 +3,8 @@ loaderVersion="[44,)"
 license="LGPL 2.1"
 
 [[mods]]
-    modId="cobblefordays"
+    modId="andesitefordays"
     version="${file.jarVersion}"
-    displayName="Cobble For Days"
+    displayName="Andesite For Days"
     authors="Lex"
-    description="A set of simple cobblestone generators. Mainly useful for servers that don't want multi-block cobblegens."
+    description="A set of simple andesite generators."
