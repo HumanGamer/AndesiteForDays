@@ -17,17 +17,18 @@
  */
 package net.minecraftforge.lex.afd;
 
+import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.RegisterColorHandlersEvent;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.CreativeModeTabEvent;
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.registries.RegistryObject;
@@ -53,7 +54,7 @@ public class AndesiteForDays {
     public static final DeferredRegister<BlockEntityType<?>> TILES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, MODID);
 
     private static final Block.Properties blockProps = Block.Properties.of(Material.GLASS).strength(3.5F).lightLevel(state -> 15);
-    private static final Item.Properties  itemProps  = new Item.Properties();
+    private static final Item.Properties  itemProps  = new Item.Properties().tab(CreativeModeTab.TAB_MISC);
 
     public static final RegistryObject<Block> TIER1_BLOCK = BLOCKS.register("tier_1", () -> new AndesiteGenBlock(1, blockProps));
     public static final RegistryObject<Block> TIER2_BLOCK = BLOCKS.register("tier_2", () -> new AndesiteGenBlock(2, blockProps));
@@ -79,7 +80,6 @@ public class AndesiteForDays {
         TILES.register(modBus);
         modBus.addListener(this::setup);
         modBus.addListener(this::setupClient);
-        modBus.addListener(this::addCreative);
 
         DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> {
             modBus.addListener(this::colorGeneratorBlockWater);
@@ -90,17 +90,6 @@ public class AndesiteForDays {
 
         //ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, ForgeConfig.clientSpec);
         ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, Config.serverSpec);
-    }
-
-    private void addCreative(CreativeModeTabEvent.BuildContents event) {
-        if (event.getTab() != CreativeModeTabs.FUNCTIONAL_BLOCKS)
-            return;
-
-        event.accept(TIER1_ITEM);
-        event.accept(TIER2_ITEM);
-        event.accept(TIER3_ITEM);
-        event.accept(TIER4_ITEM);
-        event.accept(TIER5_ITEM);
     }
 
     private void setupClient(final FMLClientSetupEvent event) {}

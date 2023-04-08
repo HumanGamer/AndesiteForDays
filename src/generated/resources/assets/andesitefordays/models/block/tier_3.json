@@ -1,6 +1,0 @@
-{
-  "parent": "andesitefordays:block/generator",
-  "textures": {
-    "material": "minecraft:block/iron_block"
-  }
-}
